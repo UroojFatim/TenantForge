@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="documentation-icon" viewBox="0 0 24 24"><rect width="24" height="24"/></symbol>
+  <symbol id="social-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></symbol>
+  <symbol id="github-icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0z"/></symbol>
+  <symbol id="discord-icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0z"/></symbol>
+  <symbol id="x-icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0z"/></symbol>
+  <symbol id="bluesky-icon" viewBox="0 0 24 24"><path d="M0 0h24v24H0z"/></symbol>
+</svg>
