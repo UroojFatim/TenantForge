@@ -1,0 +1,53 @@
+services:
+  mongo:
+    image: mongo:7.0
+    restart: unless-stopped
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ['CMD', 'mongosh', '--quiet', '--eval', 'db.runCommand({ ping: 1 }).ok']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ../..
+      dockerfile: apps/api/Dockerfile
+      target: dev
+    env_file:
+      - ../../apps/api/.env.example
+    environment:
+      NODE_ENV: development
+      PORT: 4000
+      CORS_ORIGIN: http://localhost:3000
+    ports:
+      - '4000:4000'
+    depends_on:
+      mongo:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD', 'node', '-e', "fetch('http://localhost:4000/api/health').then((response) => process.exit(response.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web:
+    build:
+      context: ../..
+      dockerfile: apps/web/Dockerfile
+      target: dev
+    env_file:
+      - ../../apps/web/.env.example
+    environment:
+      VITE_API_URL: http://localhost:4000
+    ports:
+      - '3000:3000'
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  mongo-data:

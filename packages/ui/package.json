@@ -1,0 +1,32 @@
+{
+  "name": "@bizpilothub/ui",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./src/index.tsx",
+  "types": "./src/index.tsx",
+  "exports": {
+    ".": "./src/index.tsx",
+    "./styles.css": "./src/styles.css"
+  },
+  "scripts": {
+    "build": "tsup src/index.tsx --format esm --dts --clean --out-dir dist",
+    "lint": "eslint .",
+    "test": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@bizpilothub/utils": "0.1.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@bizpilothub/eslint-config": "0.1.0",
+    "@bizpilothub/tsconfig": "0.1.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
+  }
+}

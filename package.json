@@ -1,18 +1,23 @@
 {
-  "name": "tenantforge",
+  "name": "bizpilothub",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "packageManager": "npm@11.11.0",
   "workspaces": [
-    "frontend",
-    "backend"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
-    "dev": "concurrently \"npm --prefix frontend run dev\" \"npm --prefix backend run dev\"",
-    "dev:frontend": "npm --prefix frontend run dev",
-    "dev:backend": "npm --prefix backend run dev",
-    "install:all": "npm install --prefix frontend && npm install --prefix backend"
+    "dev": "turbo run dev --parallel",
+    "dev:web": "npm run dev --workspace @bizpilothub/web",
+    "dev:api": "npm run dev --workspace @bizpilothub/api",
+    "build": "turbo run build",
+    "build:web": "npm run build --workspace @bizpilothub/web",
+    "build:api": "npm run build --workspace @bizpilothub/api",
+    "lint": "turbo run lint",
+    "test": "turbo run test"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0"
+    "turbo": "^2.5.8"
   }
 }
