@@ -1,0 +1,31 @@
+{
+  "name": "@bizpilothub/web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
+    "lint": "eslint .",
+    "test": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@bizpilothub/types": "0.1.0",
+    "@bizpilothub/ui": "0.1.0",
+    "@bizpilothub/utils": "0.1.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@bizpilothub/eslint-config": "0.1.0",
+    "@bizpilothub/tsconfig": "0.1.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.3.0",
+    "globals": "^17.6.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.0.12"
+  }
+}

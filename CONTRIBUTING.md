@@ -1,29 +1,45 @@
-# Contributing to TenantForge
-Thanks for your interest in contributing.
-## How to start
-1. Fork the repository
-2. Clone your fork
-3. Create a branch
-4. Make your changes
-5. Run tests and lint checks
-6. Open a pull request
-## Branch naming
-- feat/...
-- fix/...
-- docs/...
-- refactor/...
-- test/...
-## Commit style
-- feat: add invite member endpoint
-- fix: handle expired refresh token
-- docs: improve setup instructions
-## Local setup
-pnpm install
-docker compose up -d
-pnpm dev
-## Pull request checklist
-- Code builds locally
+# Contributing to BizPilotHub
+
+Thanks for helping improve BizPilotHub.
+
+## Local Setup
+
+```bash
+npm install
+npm run dev
+```
+
+## Useful Checks
+
+```bash
+npm run lint
+npm run build
+npm run test
+```
+
+## Branch Naming
+
+- `feat/...`
+- `fix/...`
+- `docs/...`
+- `refactor/...`
+- `test/...`
+
+## Commit Style
+
+- `feat: add dashboard shell`
+- `fix: harden api error handler`
+- `docs: update repo layout`
+
+## Pull Request Checklist
+
+- The project installs from the root with `npm install`
+- The root `dev` script starts the workspaces
 - Lint passes
-- Tests pass
-- Screenshots added for UI changes
-- Docs updated if needed
+- Typecheck or tests pass for the touched workspace
+- Docs are updated when behavior changes
+
+## Notes
+
+- Keep auth and MongoDB changes separate until the foundation is in place.
+- Prefer the shared workspace packages instead of duplicating helpers or config.

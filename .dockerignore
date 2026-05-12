@@ -1,0 +1,11 @@
+node_modules
+.turbo
+dist
+coverage
+.git
+.github
+frontend
+backend
+apps/*/dist
+packages/*/dist
+**/*.log
