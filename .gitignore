@@ -3,8 +3,6 @@ node_modules
 dist
 coverage
 *.tsbuildinfo
-.env
-.env.local
 .env.*.local
 apps/*/dist
 packages/*/dist
@@ -12,3 +10,4 @@ apps/*/coverage
 packages/*/coverage
 *.log
 .DS_Store
+config.bat
